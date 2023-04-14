@@ -24,36 +24,30 @@ Installation:
 
 [This one is a bit complicated, be sure to make backups before starting]
 
-Mission:
+Mission Integration:
 
-Merge the contents of the addons folder with your mission.pbo.
+Merge the contents of the "Exile.Altis\addons" folder with your mission folder.
 
-Merge the contents of config.h with your config.cpp
+Merge the contents of "Exile.Altis\config.hpp" with your mission's config.cpp
 
-Merge the contents of description.ext with your description.ext
+Merge the contents of "Exile.Altis\description.ext" with your mission's description.ext
 
-Merge the contents of init.sqf into your current init.sqf.
+Merge the contents of "Exile.Altis\init.sqf" with your mission's init.sqf.
 
-Copy the folder with overwrites of ExileServer files into your mission folder.
+Copy the "Exile.Altis\GRG_Exile_Server_Overrides" directory into your mission folder.
 
 An example of virtual hanger terminals and spawn points I use is included.
 
 Server:
 
-pack the virtual_garage folder and put virtual_garage.pbo in @exileserver\addons
+Pack the "@ExileServer\addons\VirtualGarage_Server" folder and move the resulting VirtualGarage_Server.pbo to your @ExileServer\addons directory.
 
-Run \database\virtual_garage.sql to add the virtual garage table to the database for your server AFTER making a backup.
-Run \database\exileDBupdate to add a field for weapons loadouts to the vehicles table AFTER making a backup.
-Merge @ExileServer\extDB\sql_custom_v2\exile.ini with your existing extDB3 exile.ini (be sure to make a backup first).
+Backup your MySQL Exile database, then run the "database\virtual_garage.sql" and "database\exileDBupdate.sql" database queries respectively
+- "database\virtual_garage.sql" adds the virtual garage table
+- "database\exileDBupdate.sql" adds a field for weapons loadouts to the existing vehicles table
+Merge the contents of "@ExileServer\extDB\sql_custom_v2\exile.ini" with your existing extDB3 exile.ini (be sure to make a backup first).
 
 SPECIAL NOTES.
 
 The virtual garage / hanger / boatrack does require one set of functions from my rearm / repair / refuel scripts.
 If you have already installed that set of scripts you do not need to include the code listed in init.sqf to make virtualGarage run.
-
-
-
-  
-  
-          
-
